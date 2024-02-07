@@ -1,0 +1,10 @@
+LOGIN
+ |  \->VISUALIZZA AUTO-> click -> profilo auto completo
+ |			  \-> Vendita -> Scrivere Log Vendita su DB (CodUtente,auto,data)
+ |				\-> ANNULLA-> si torna alla visualizzazione utenti
+ |
+ |
+ |
+ |
+\/
+SE UTENTE è AMMINISTRATORE -> AGGIUNTA AUTO + VISUALIZZA

@@ -1,0 +1,48 @@
+ <div *ngIf="listaCars.length!=0">
+    <div class="row cardsheesh">
+            <div class="card myCard" *ngFor="let car of listaCars">
+                <div class="card-title">
+                    <h3>{{car.marca}} {{car.nome}}</h3>
+                    <img class="img" src="assets/img/{{car.marca}}_{{car.nome}}.jpg" (click)="identify(car.marca,car.nome)">
+                </div>
+                <div class="card-body" *ngIf="thing.length != 0 && car.id==thing.id">
+                    <h3 class="card-title">ID car : {{thing.id}}</h3>
+                    <h4 class="card-text">Marca : {{thing.marca}}</h4>
+                    <h4 class="card-text">Modello : {{thing.nome}}</h4>
+                    <h4 class="card-text">Costo : {{thing.prezzo}}</h4>
+                    <h4 class="card-text">Targa : {{thing.targa}}</h4>
+                    <h4 class="card-text">Porte : {{thing.nPorte}}</h4>
+                    <h4 class="card-text">Cilindrata : {{thing.cilindrata}}</h4>
+                    <h4 class="card-text">Anno : {{thing.anno}}</h4>
+                    <h4 class="card-text">KM : {{thing.km}}</h4>
+                    <h4 class="card-text">Colore : {{thing.colore}}</h4>
+                    <h4 class="card-text">Cilindrata : {{thing.cilindrata}}</h4>
+                    <br>
+                    <button class="btn btn-dark" (click)="buyCar()">COMPRA</button>
+                    <button class="btn btn-dark" (click)="closeCard()">ESCI</button>
+
+                    <div *ngIf="strWriteResult == 'TRANSAZIONE EFFETTUATA CON SUCCESSO'">
+                        <p style="color: green;">TRANSAZIONE EFFETTUATA CON SUCCESSO</p>
+                    </div>
+                    <div *ngIf="strWriteResult == 'TRANSAZIONE NEGATA'">
+                        <p style="color: red;">TRANSAZIONE NEGATA</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-5 center add">
+                <button class="btn btn-danger" (click)="aggiungi()" *ngIf="admin!='0'"> AGGIUNGI AUTO </button>
+            </div>
+            
+    </div>
+    <div class="row center">
+        <button class="btn btn-dark footer" (click)="esci()">Esci</button>
+    </div>
+
+    
+</div> 
+
+<a id="login" routerLink="/login" style="display: none;">login</a>
+<a id="amministratore" routerLink="/amministratore" style="display: none;">amministratore</a>
+
+
